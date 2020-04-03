@@ -6,9 +6,9 @@ services:
     ports:
       - 80
     volumes:
-      - web:/var/www/web
+      - /web:/var/www/web
     networks:
-      - webku
+      - frontend
   mysql:
     image: mariadb
     environment:
@@ -17,12 +17,11 @@ services:
       MYSQL_USER: test
       MYSQL_PASSWORD: test123
     networks:
-      - webku
+      - frontend
     volumes:
       - /etc/localtime:/etc/localtime:ro
     restart: unless-stopped
     container_name: mysql
 
 networks:
- default:
-  name: webku
+ frontend:
