@@ -1,5 +1,8 @@
 pipeline {
-    agent any
+   // agent any
+node {
+    echo "docker-gcp"
+}
    stages {
       stage('Build') {
          steps {
