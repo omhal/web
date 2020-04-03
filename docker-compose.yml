@@ -1,12 +1,12 @@
 version: '3.3'
 services:
-  wordpress:
+  web:
     build: .
     restart: always
     ports:
-      - 80:80
+      - ${PORT_FE}:80
     volumes:
-      - web:/var/www/web
+      - ${DIR_WEB}:/var/www/web
     networks:
       - frontend
   mysql:
