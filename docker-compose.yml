@@ -4,9 +4,9 @@ services:
     build: .
     restart: always
     ports:
-      - ${PORT_FE}:80
+      - 80
     volumes:
-      - ${DIR_WEB}/web:/var/www/web
+      - web:/var/www/web
     networks:
       - web
   mysql:
