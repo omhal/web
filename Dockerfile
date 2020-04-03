@@ -58,7 +58,7 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 #COPY web /var/www
 COPY php7proxy /etc/nginx/php7proxy
 COPY nginx.conf /etc/nginx/
-COPY fe.conf /etc/nginx/conf.d/fe.conf
+COPY xblack.conf /etc/nginx/conf.d/xblack.conf
 COPY php.ini /etc/php/7.2/fpm/
 COPY www.conf /etc/php/7.2/fpm/pool.d/
 
