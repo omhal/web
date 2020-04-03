@@ -1,6 +1,5 @@
 pipeline {
-   // agent none
-node('docker-gcp') {
+    agent any
    stages {
       stage('Build') {
          steps {
@@ -10,5 +9,4 @@ node('docker-gcp') {
          }
       }
    }
- } 
-}
+} 
