@@ -49,13 +49,13 @@ ENV TZ=Asia/Jakarta
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 # Composer installation.
-COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
-ENV COMPOSER_ALLOW_SUPERUSER=1
-RUN composer global require hirak/prestissimo --prefer-dist --no-progress --no-suggest --classmap-authoritative \
-	&& composer clear-cache
-ENV PATH="${PATH}:/root/.composer/vendor/bin"
+#COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+#ENV COMPOSER_ALLOW_SUPERUSER=1
+#RUN composer global require hirak/prestissimo --prefer-dist --no-progress --no-suggest --classmap-authoritative \
+#	&& composer clear-cache
+#ENV PATH="${PATH}:/root/.composer/vendor/bin"
 
-
+COPY web /var/www
 COPY php7proxy /etc/nginx/php7proxy
 COPY nginx.conf /etc/nginx/
 COPY fe.conf /etc/nginx/conf.d/fe.conf
