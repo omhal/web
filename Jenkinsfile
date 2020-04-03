@@ -1,5 +1,5 @@
 pipeline {
-   agent any
+   agent none
 node('docker-gcp') {
     // some block
 }
