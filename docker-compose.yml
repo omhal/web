@@ -6,7 +6,7 @@ services:
     ports:
       - 80:80
     volumes:
-      - /web:/var/www/web
+      - web:/var/www/web
     networks:
       - frontend
   mysql:
