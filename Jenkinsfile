@@ -1,5 +1,5 @@
-#pipeline {
-#   agent any
+pipeline {
+   agent any
 node('docker-gcp')
    stages {
       stage('Build') {
