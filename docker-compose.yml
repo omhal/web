@@ -1,0 +1,28 @@
+version: '3.3'
+services:
+  october:
+    build: .
+    restart: always
+    ports:
+      - ${PORT_FE}:80
+    volumes:
+      - ${DIR_WEB}/web:/var/www/web
+    networks:
+      - web
+  mysql:
+    image: mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: test123
+      MYSQL_DATABASE: test
+      MYSQL_USER: test
+      MYSQL_PASSWORD: test123
+    networks:
+      - web
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+    restart: unless-stopped
+    container_name: mysql
+
+networks:
+ web:
+  name: web
