@@ -55,7 +55,7 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 #	&& composer clear-cache
 #ENV PATH="${PATH}:/root/.composer/vendor/bin"
 
-COPY web /var/www
+#COPY web /var/www
 COPY php7proxy /etc/nginx/php7proxy
 COPY nginx.conf /etc/nginx/
 COPY fe.conf /etc/nginx/conf.d/fe.conf
