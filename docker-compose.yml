@@ -4,7 +4,7 @@ services:
     build: .
     restart: always
     ports:
-      - 80
+      - 80:80
     volumes:
       - /web:/var/www/web
     networks:
