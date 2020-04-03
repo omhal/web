@@ -6,7 +6,7 @@ services:
     ports:
       - ${PORT_FE}:80
     volumes:
-      - ${DIR_WEB}:/var/www/web
+      - ${DIR_WEB}:/var/www
     networks:
       - frontend
   mysql:
